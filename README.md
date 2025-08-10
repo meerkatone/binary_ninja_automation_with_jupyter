@@ -20,7 +20,7 @@ Installation
 
 Download and install Jupyterlab and dependencies using
 
-- https://github.com/meerkatone/Binary-Ninja-Automation-with-Jupyter
+- https://github.com/meerkatone/binary_ninja_automation_with_jupyter
 - pip3 install -r requirements.txt
 
 Jupyter Notebook Modification

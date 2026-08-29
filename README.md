@@ -1,44 +1,38 @@
-<h1>Binary Ninja Automation with Jupyter</h1>
+# Binary Ninja automation with Jupyter
 
-YouTube Video
-- https://www.youtube.com/watch?v=mAIPu9HkEOs
+This notebook demonstrates Binary Ninja automation, binary feature extraction,
+and searches for patterns that may warrant vulnerability review.
 
-Topics covered and learning goals
+- Notebook: `Binary Ninja Headless Final 1.0.ipynb`
+- [Companion video](https://www.youtube.com/watch?v=mAIPu9HkEOs)
 
-- Automation with Binary Ninja (commercial) and Jupyterlab
-- How to extract binary features and search for potential vulnerabilities
+## Requirements
 
-Tools used
+- Binary Ninja Commercial with headless Python API access
+- Python with JupyterLab
+- the packages listed in `requirements.txt`
 
-- Binary Ninja 4.0 (commercial): https://binary.ninja/
-- Jupyterlab: https://jupyter.org/
-- Pwntools: https://docs.pwntools.com/en/stable/
+Install Binary Ninja's Python API with the `install_api.py` script supplied by
+your Binary Ninja installation. Then create an environment and start Jupyter:
 
-Installation
+```bash
+git clone https://github.com/meerkatone/binary_ninja_automation_with_jupyter.git
+cd binary_ninja_automation_with_jupyter
+python3 -m venv .venv
+source .venv/bin/activate
+python "/Applications/Binary Ninja.app/Contents/Resources/scripts/install_api.py"
+python -m pip install -r requirements.txt
+jupyter lab "Binary Ninja Headless Final 1.0.ipynb"
+```
 
-- Binary Ninja 4.0 Commercial: https://docs.binary.ninja/getting-started.html
+Adjust the Binary Ninja application path on non-default or non-macOS
+installations. The notebook contains local input paths; change them to the
+binaries you intend to analyse. Results are triage data, not confirmed
+vulnerabilities.
 
-Download and install Jupyterlab and dependencies using
+## References
 
-- https://github.com/meerkatone/binary_ninja_automation_with_jupyter
-- pip3 install -r requirements.txt
-
-Jupyter Notebook Modification
-
-- You will need to modify any code that points to a path with the correct path for your binaries, and pwntools install
-
-Reference Material
-
-- 10 Minutes to Pandas: https://pandas.pydata.org/docs/user_guide/10min.html
-- Pandas Cookbook: https://pandas.pydata.org/docs/user_guide/cookbook.html#cookbook
-- Binary Ninja Python API Reference: https://api.binary.ninja/
-- Binary Ninja Intermediate Language Overview: https://docs.binary.ninja/dev/bnil-overview.html
-- Batch Processing and Other Automation Tips: https://docs.binary.ninja/dev/batch.html
-- User Informed Data Flow: https://docs.binary.ninja/dev/uidf.html
-- SSA Explained: https://carstein.github.io/2020/10/22/ssa-explained.html#fnref:1
-- Hunting Format String Vulnerabilities: https://youtu.be/Mylbm3MIiTU
-- Auditing system calls for command injection vulnerabilities using Binary Ninja's HLIL: https://youtu.be/F3uh8DuS0tE
-- cetfor/SystemCallAuditorBinja.py: https://gist.github.com/cetfor/67cbd707bf44252aebbaf6308db28ee5
-- Learning Binary Ninja for Reverse Engineering - Scripting Basics and More Part 1: https://youtu.be/RVyZBqjLrE0
-- Learning Binary Ninja for Reverse Engineering - Scripting Basics and More Part 2: https://youtu.be/gLggUUy0-iI
-- EMUX - Using Docker and QEMU to emulate ARM and MIPS IoT devices, to facilitate security research: https://github.com/therealsaumil/emux/
+- [Binary Ninja Python API](https://api.binary.ninja/)
+- [Binary Ninja automation](https://docs.binary.ninja/dev/batch.html)
+- [Binary Ninja intermediate languages](https://docs.binary.ninja/dev/bnil-overview.html)
+- [User-informed data flow](https://docs.binary.ninja/dev/uidf.html)
